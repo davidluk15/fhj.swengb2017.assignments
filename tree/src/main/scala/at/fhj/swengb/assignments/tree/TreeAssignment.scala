@@ -1,8 +1,7 @@
 package at.fhj.swengb.assignments.tree
 
-import javafx.scene.paint.Color
 
-import scala.math.BigDecimal.RoundingMode
+import javafx.scene.paint.Color
 import scala.util.Random
 
 object Graph {
@@ -29,7 +28,6 @@ object Graph {
   def randomTree(root: Pt2D): Tree[L2D] =
     mkGraph(root, Random.nextInt(360), Random.nextDouble() * 150, Random.nextInt(7))
 
-
   /**
     * Given a Tree of L2D's and a function which can convert any L2D to a Line,
     * you have to traverse the tree (visit all nodes) and create a sequence
@@ -39,8 +37,19 @@ object Graph {
     * @param convert a converter function
     * @return
     */
-  def traverse[A, B](tree: Tree[A])(convert: A => B): Seq[B] =  ???
+  def traverse[A, B](tree: Tree[A])(convert: A => B): Seq[B] = {
 
+    //Helper to add all elements to list
+    def addList(elem: Tree[A], list: Seq[A]): Seq[A] = {
+      elem match {
+        case Node(x) => list :+ x
+        case Branch(left, right) => addList(left, addList(right, list))
+      }
+    }
+
+
+    addList(tree, List()).reverse.map(convert)
+  }
 
   /**
     * Creates / constructs a tree graph.
@@ -61,12 +70,56 @@ object Graph {
               treeDepth: Int,
               factor: Double = 0.75,
               angle: Double = 45.0,
-              colorMap: Map[Int, Color] = Graph.colorMap): Tree[L2D] = ???
+              colorMap: Map[Int, Color] = Graph.colorMap): Tree[L2D] = {
 
+
+    require(treeDepth >= 0 && treeDepth <= (colorMap.size - 1))
+
+
+    def createSubTree(leaf: Node[L2D], factor: Double, angle: Double, color: Color): Branch[L2D] = {
+      val nodeLeft = Node(leaf.value.left(factor, angle, color))
+      val nodeRight = Node(leaf.value.right(factor, angle, color))
+
+      Branch(leaf, Branch(nodeLeft, nodeRight))
+    }
+
+
+    def createTree(currTree: Tree[L2D], depth: Int, maxDepth: Int): Tree[L2D] = {
+      if (depth == maxDepth)
+        currTree
+      else {
+
+        def addLevel(tree: Tree[L2D], currLevel: Int): Branch[L2D] = {
+          tree match {
+            case Node(root) =>
+              createSubTree(Node(root), factor, angle, colorMap(currLevel))
+            case Branch(Node(root), Branch(Node(left), Node(right))) =>
+              val newSubtreeLeft =
+                createSubTree(Node(left), factor, angle, colorMap(currLevel))
+              val newSubtreeRight =
+                createSubTree(Node(right), factor, angle, colorMap(currLevel))
+              Branch(Node(root), Branch(newSubtreeLeft, newSubtreeRight))
+            case Branch(Node(root), Branch(left, right)) =>
+              Branch(Node(root),
+                Branch(addLevel(left, depth + 1),
+                  addLevel(right, depth + 1)))
+          }
+        }
+
+        createTree(addLevel(currTree, depth), depth + 1, maxDepth)
+      }
+    }
+
+
+    val firstNode: Tree[L2D] = Node(
+      L2D(start, initialAngle, length, colorMap(0)))
+
+    treeDepth match {
+      case 0 => firstNode
+      case _ => createTree(firstNode, 0, treeDepth)
+    }
+  }
 }
-
-
-
 
 object L2D {
 
@@ -89,7 +142,6 @@ object L2D {
     new L2D(start, end, color)
   }
 
-
 }
 
 case class L2D(start: Pt2D, end: Pt2D, color: Color) {
@@ -101,14 +153,14 @@ case class L2D(start: Pt2D, end: Pt2D, color: Color) {
   lazy val angle = {
     assert(!((xDist == 0) && (yDist == 0)))
     (xDist, yDist) match {
-      case (x, 0) if x > 0 => 0
-      case (0, y) if y > 0 => 90
-      case (0, y) if y < 0 => 270
-      case (x, 0) if x < 0 => 180
+      case (x, 0) if x > 0          => 0
+      case (0, y) if y > 0          => 90
+      case (0, y) if y < 0          => 270
+      case (x, 0) if x < 0          => 180
       case (x, y) if x < 0 && y < 0 => Math.atan(y / x) * 180 / Math.PI + 180
       case (x, y) if x < 0 && y > 0 => Math.atan(y / x) * 180 / Math.PI + 180
       case (x, y) if x > 0 && y < 0 => Math.atan(y / x) * 180 / Math.PI + 360
-      case (x, y) => Math.atan(y / x) * 180 / Math.PI
+      case (x, y)                   => Math.atan(y / x) * 180 / Math.PI
     }
   }
 
@@ -125,6 +177,4 @@ case class L2D(start: Pt2D, end: Pt2D, color: Color) {
     L2D(end, angle + deltaAngle, length * factor, c)
   }
 
-
 }
-
