@@ -7,16 +7,24 @@
 | Hours
 | Description
 
-| 29.11.17
-| 1
-| Review of this and that
+| 2.12.17
+| 3
+| Review of previous lectures and exercises
 
-| 30.11.17
-| 5
-| implemented css
-
-| 11.07.17
+| 5.12.17
 | 2
-| fixed bugs
+| Build GUI with SceneBuilder
+
+| 9.12.17
+| 2
+| Worked on  RpnCalculator and RPNOperations
+
+| 10.12.17
+| 3
+| Finished RpnCalculator and RPNOperations
+
+| 12.12.17
+| 3
+| Worked on the CalculatorApp + GUI
 
 |===
