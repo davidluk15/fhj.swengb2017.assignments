@@ -30,7 +30,7 @@ class CalculatorFX extends javafx.application.Application {
 
   override def start(stage: Stage): Unit =
     try {
-      stage.setTitle("Calculator")
+      stage.setTitle("Calculator Lukas David")
       setSkin(stage, fxml, css)
       stage.show()
       stage.setMinWidth(stage.getWidth)
@@ -56,19 +56,92 @@ class CalculatorFxController extends Initializable {
 
   def setCalculator(rpnCalculator : RpnCalculator) : Unit = calculatorProperty.set(rpnCalculator)
 
-  @FXML var numberTextField : TextField = _
+  @FXML var resultText : TextField = _
 
   override def initialize(location: URL, resources: ResourceBundle) = {
 
   }
 
   def sgn(): Unit = {
-    getCalculator().push(Op(numberTextField.getText)) match {
-      case Success(c) => setCalculator(c)
-      case Failure(e) => // show warning / error
+    getCalculator().push(Op(resultText.getText)) match {
+      case Success(c) => setCalculator(c); resultText.setText(c.peek().asInstanceOf[Val].value.toString)
+      case Failure(e) => setCalculator(RpnCalculator()); resultText.setText("Error") // show warning / error
     }
     getCalculator().stack foreach println
   }
 
+  def btX(): Unit = setOp("*")
+
+  def btDivision(): Unit = setOp("/")
+
+  def btPlus(): Unit = setOp("+")
+
+  def btMinus(): Unit = setOp("-")
+
+  def btEnter(): Unit = {
+    if (resultText.getText != "Error" && !resultText.getText.contains(".")) {
+      resultText.setText(resultText.getText + ".")
+    }
+  }
+  def bt0(): Unit = setNumber("0")
+
+  def bt1(): Unit  = setNumber("1")
+
+  def bt2(): Unit  = setNumber("2")
+
+  def bt3(): Unit  = setNumber("3")
+
+  def bt4(): Unit  = setNumber("4")
+
+  def bt5(): Unit  = setNumber("5")
+
+  def bt6(): Unit  = setNumber("6")
+
+  def bt7(): Unit  = setNumber("7")
+
+  def bt8(): Unit  = setNumber("8")
+
+  def bt9(): Unit = setNumber("9")
+
+
+
+  def btSign(): Unit = {
+    if (resultText.getText != "Error"
+      && resultText.getText != "0"
+      && resultText.getText != "*"
+      && resultText.getText != "/"
+      && resultText.getText != "-"
+      && resultText.getText != "+") {
+      val dbl = resultText.getText.toDouble * -1
+      resultText.setText(dbl.toString)
+    }
+  }
+
+  def btClear(): Unit = {
+    if (resultText.getText == "0") {
+      setCalculator(RpnCalculator())
+    } else {
+      resultText.setText("")
+    }
+  }
+
+  private def setOp(op: String): Unit = {
+    if (resultText.getText != "Error") {
+      resultText.setText(op)
+    }
+  }
+
+  private def setNumber(s: String): Unit = {
+    if (resultText.getText == "Error"
+      || resultText.getText == "0"
+      || resultText.getText == "*"
+      || resultText.getText == "/"
+      || resultText.getText == "-"
+      || resultText.getText == "+") {
+      resultText.setText(s)
+    } else {
+      resultText.setText(resultText.getText + s)
+    }
+  }
 
 }
