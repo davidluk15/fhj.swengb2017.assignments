@@ -70,19 +70,6 @@ class CalculatorFxController extends Initializable {
     getCalculator().stack foreach println
   }
 
-  def btX(): Unit = setOp("*")
-
-  def btDivision(): Unit = setOp("/")
-
-  def btPlus(): Unit = setOp("+")
-
-  def btMinus(): Unit = setOp("-")
-
-  def btEnter(): Unit = {
-    if (resultText.getText != "Error" && !resultText.getText.contains(".")) {
-      resultText.setText(resultText.getText + ".")
-    }
-  }
   def bt0(): Unit = setNumber("0")
 
   def bt1(): Unit  = setNumber("1")
@@ -103,7 +90,19 @@ class CalculatorFxController extends Initializable {
 
   def bt9(): Unit = setNumber("9")
 
+  def btX(): Unit = setOp("*")
 
+  def btDivision(): Unit = setOp("/")
+
+  def btPlus(): Unit = setOp("+")
+
+  def btMinus(): Unit = setOp("-")
+
+  def btEnter(): Unit = {
+    if (resultText.getText != "Error" && !resultText.getText.contains(".")) {
+      resultText.setText(resultText.getText + ".")
+    }
+  }
 
   def btSign(): Unit = {
     if (resultText.getText != "Error"

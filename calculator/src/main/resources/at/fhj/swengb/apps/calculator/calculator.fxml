@@ -54,7 +54,7 @@
          <font>
             <Font size="30.0" />
          </font></Button>
-      <Button id="bOne" fx:id="bOne" alignment="CENTER" contentDisplay="CENTER" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#bt1" prefHeight="30.0" prefWidth="10.0" styleClass="grey" text="1" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="8">
+      <Button id="bOne" fx:id="bOne" alignment="CENTER" contentDisplay="CENTER" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#bt0" prefHeight="30.0" prefWidth="10.0" styleClass="grey" text="1" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="8">
          <font>
             <Font size="30.0" />
          </font></Button>
