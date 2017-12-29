@@ -1,12 +1,14 @@
 package at.fhj.swengb.apps.battleship.model
 
+
 /**
   * Contains all information about a battleship game.
   */
 case class BattleShipGame(battleField: BattleField,
                           getCellWidth: Int => Double,
                           getCellHeight: Int => Double,
-                          log: String => Unit) {
+                          log: String => Unit){
+
 
   /**
     * remembers which vessel was hit at which position
@@ -14,6 +16,9 @@ case class BattleShipGame(battleField: BattleField,
     *
     **/
   var hits: Map[Vessel, Set[BattlePos]] = Map()
+
+
+  var clickedCells : List[BattlePos] = List()
 
   /**
     * contains all vessels which are destroyed
@@ -31,7 +36,19 @@ case class BattleShipGame(battleField: BattleField,
       getCellHeight(y),
       log,
       battleField.fleet.findByPos(pos),
-      updateGameState)
+      updateGameState,
+      hit)
+  }
+
+  def hit(pos:BattlePos):Unit = {
+    if(!clickedCells.contains(pos))
+      clickedCells = clickedCells :+ pos
+  }
+
+  def refresh(x:Int) : Unit = {
+    clickedCells.take(x).foreach((pos) => {
+      cells(pos.x*battleField.width + pos.y).getOnMouseClicked().handle(null)
+    })
   }
 
   def getCells(): Seq[BattleFxCell] = cells
