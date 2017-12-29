@@ -25,14 +25,14 @@
                <font>
                   <Font size="20.0" />
                </font></Button>
-                <Button fx:id="btSave" onAction="#saveGame" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: Gold; -fx-border-color: Black;" text="Save Game">
+                <Button fx:id="btSave" onAction="#save" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: Gold; -fx-border-color: Black;" text="Save Game">
                     <VBox.margin>
                         <Insets top="10.0" />
                     </VBox.margin>
                <font>
                   <Font size="20.0" />
                </font></Button>
-                <Button fx:id="btLoad" onAction="#loadGame" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: Gold; -fx-border-color: Black;" styleClass="button3" text="Load Game">
+                <Button fx:id="btLoad" onAction="#load" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: Gold; -fx-border-color: Black;" styleClass="button3" text="Load Game">
                     <VBox.margin>
                         <Insets top="10.0" />
                     </VBox.margin>

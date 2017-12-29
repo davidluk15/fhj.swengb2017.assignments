@@ -26,7 +26,7 @@ class BattleShipFxController extends Initializable {
 
   def newGame(): Unit = initGame()
 
-  def saveGame(): Unit = {
+  def save(): Unit = {
     val savedGame: BattleShipProtobuf.BattleShipGame = convert(Game)
     val path = Paths.get("target/BattleShipProtobuf.bin")
     val outputstream = Files.newOutputStream(path)
@@ -38,7 +38,7 @@ class BattleShipFxController extends Initializable {
 
 
 
-  def loadGame(): Unit = {
+  def load(): Unit = {
     val path = Paths.get("target/BattleShipProtobuf.bin")
     val inputstream = Files.newInputStream(path)
 
