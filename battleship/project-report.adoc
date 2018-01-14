@@ -1,0 +1,250 @@
+= Project Report: Battleship Game
+Doc Writer Lukas David
+v1.0, 12.01-2017
+:sectnums: 
+:toc:
+:toclevels: 4
+
+== Project Team
+Our team consists of two members *Lukas David* who is the team leader and *Alexander Horina* and it is called Jägermeister. +
+[%hardbreaks]
+We split our project in two main parts *organization* and *coding*. 
+Due to the small size of our team we decided that both team members are involved in every part of the project.
+[%hardbreaks]
+Because only two people work on this project we decided that we will not need something like scheduled formal meetings. Instead we will do most of our communication with slack and only meet when there is a special reason to do so.
+
+== Task and time estimation
+[cols="1,25,5, 1", options="header,footer"]
+.Organization
+|===
+| Task
+| Description
+| Due Date
+| Estimated Hours
+
+
+| Project team
+| Forming project team, deciding on project leader and responsibilities
+| 23.12.2017
+|1h
+
+| Time estimation
+| Split the project in smaller tasks and define a time estimation
+| 14.01.2018
+|4h
+
+| Mockups
+| Designed the mockups for the project
+| 14.01.2018
+|5h
+
+| Project cost calculation
+| Estimated costs and decided on how much money we would charge for our product
+| 14.01.2018
+|2h
+
+| Write project report
+| Write report including all mockups, cost calculation and time estimation
+| 14.01.2018
+|4h
+
+| User manual
+| Write a user manual provides information on how to start the game etc.
+|23.01.2018
+|2h
+
+| Time expenditure
+| List all activities with date and how much time we needed
+|23.01.2018
+|1h
+
+| Final documentation
+| Creating a final documentation which includes all information about our project
+|23.01.2018
+|8h
+
+| Presentation
+| Prepare our final presentation
+|25.01.2018
+|4h
+
+|Total
+| 
+| 
+|*31h*
+
+|===
+
+[cols="1,25,5, 1", options="header,footer"]
+.Coding
+|===
+| Task
+| Description
+| Due Date
+| Estimated Hours
+
+| Splash screen
+| Implement preloader, picture appearing at the start of the game
+| 23.01.2018
+| 3h
+
+| Welcome screen
+| Worked on start screen where you can decide between new game, highscore and credits
+| 23.01.2018
+| 2h
+
+| Credits screen
+| A screen where you can see who designed the game etc.
+| 23.01.2018
+|3h
+
+| New game
+| Implement logic behind the game, every game has a unique name and players can choose their name
+| 23.01.2018
+| 20h
+
+| Edit mode
+| Players can place their ships before the game, no overlapping should be possible
+| 23.01.2018
+| 10h
+
+| Multiplayer screen
+| Implement the actual game screen
+| 23.01.2018
+| 7h
+
+| High score
+| A highscore page where it is also possible to replay old games
+| 23.01.2018
+| 10h
+
+| Protobuf
+| Make sure game state is saved correctly and game can be loaded
+| 23.01.2018
+| 4h
+
+| Testing
+| Writing tests to ensure the game works as intended
+| 23.01.2018
+| 5h
+
+|Total
+| 
+| 
+|*64h*
+
+
+
+|===
+
+[cols="1,2", options="header,footer"]
+.Total
+|===
+| Task
+| Estimated hours
+
+| Organization
+|31h
+
+| Coding
+|64h
+
+|Total
+|*95h*
+
+|===
+As mentioned before our project is divided in two main categories organization and coding and every task is in one of these two categories. Like we can see above the coding part has with 64 hours more than twice the size as the organization part which has only 31 hours.  
+[%hardbreaks]
+
+Combined they result in a total sum of *95 hours* which is the estimated time for our whole project.
+
+== Cost Calculation
+For the project cost calculation we decided to charge 15€ for one working hour.
+So when we estimate with 95 hours the costs for our project will be *1425*€.
+[%hardbreaks]
+
+The price for our product will be 5€. We choose this price because we think that for a simple battleship game you can't charge that much, because it isn't a game that is very unique or new, because there are already so many battleship games around. 
+[%hardbreaks]
+1425/5 = *285*
+[%hardbreaks]
+So 285 games will be the breakeven point for our project. This means we need to sell 285 games to cover the costs of the project and for every game we sell after the first 285 games we will make a profit.
+
+
+== Mockups
+All our mockups are designed with Balsamiq Mockups 3. We kept them in black and white because we wanted to focus on the functionality of our game first and afterwards we will design a pretty looking GUI. 
+
+=== Splash Screen
+
+
+.Splash screen
+[caption="Mock-up 1: "]
+image::https://raw.githubusercontent.com/davidluk15/hello-world/master/splashscreen.PNG[Splash,700,500]
+{sp} +
+This is our splash screen so this picture appears while the game is loading and before you enter the main menu.
+{sp} +
+{sp} 
+
+=== Main Menu
+
+.Main menu
+[caption="Mock-up 2: "][%hardbreaks]
+image::https://raw.githubusercontent.com/davidluk15/hello-world/master/main.PNG[Main,700,500]
+{sp} +
+This is our welcome screen where it is possible to start a new game, view the highscores or enter the credits menu. With a click on the "Start a new game" button you enter a menu where both players can choose their name.
+{sp} +
+{sp} 
+
+=== Highscores
+
+.Highscores
+[caption="Mock-up 3: "][%hardbreaks]
+image::https://raw.githubusercontent.com/davidluk15/hello-world/master/highscores.PNG[Highscores,700,500]
+{sp} +
+In the highscores menu you see the best players in descending order. You also see the date of the game, its name the number of moves used and it is possible to replay this game.
+[%hardbreaks]
+At the bootom there are two buttons with "Clear Score" you delete all the entries form the highscores list and "Return" brings you back to the main menu. 
+{sp} +
+{sp} 
+
+
+=== Credits
+
+.Credits
+[caption="Mock-up 4: "][%hardbreaks]
+image::https://raw.githubusercontent.com/davidluk15/hello-world/master/credits.PNG[Credits,700,500]
+{sp} +
+Here you see who designed and programmed the game. We also plan to include license information and to mention any sources we used for the programming process.
+This page also has a "Return" button to bring you back to the main menu.
+{sp} +
+{sp} 
+
+=== Name Screen
+
+.Name screen
+[caption="Mock-up 5: "][%hardbreaks]
+image::https://raw.githubusercontent.com/davidluk15/hello-world/master/choosename.PNG[Names,700,500]
+{sp} +
+In this window both players have to choose a name. When every player entered a name a click on "Next" brings you to the edit screen.
+{sp} +
+{sp} 
+
+=== Edit Screen
+.Edit Screen
+[caption="Mock-up 6: "][%hardbreaks]
+image::https://raw.githubusercontent.com/davidluk15/hello-world/master/edit.PNG[Edit,700,500]
+{sp} +
+This is the edit screen where the players place their ships. At the top there is a list where you see the remaining ships and their length. You can decide if you want to place the ship vertical or horizontal and then you have to set the X and Y Position and click "Place"
+
+[%hardbreaks]
+On the right side you see an graphical illustration of your placed ships. When every ship is placed you can click "Next" to enter the battlefield or you can return to the main menu.
+
+=== Battlefield
+.Battlefield
+[caption="Mock-up 7: "][%hardbreaks]
+image::https://raw.githubusercontent.com/davidluk15/hello-world/master/battlefield.PNG[Battlefield,700,500]
+{sp} +
+In this window finally we see the actual game. At the top there is the game name which is generated from a list and the player name. On the left side we have a log where you can see if a player missed or hit a ship.
+[%hardbreaks]
+On the right side there are a few buttons. "New game" brings you back to the screen where every player chooses his name. It is also possible to save and load a game or to go back to the main menu.
+[%hardbreaks]
+On the right upper part we see a status log. There we see the ships remaining and how often they have been hit by a player.
