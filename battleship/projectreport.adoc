@@ -1,11 +1,12 @@
 = Project Report: Battleship Game
 Doc Writer Lukas David
 v1.0, 12.01-2017
+:sectnums: 
 :toc:
 :toclevels: 4
 
 == Project Team
-Our team consists of two members Lukas David who is the team leader and Alexander Horina and it is called Jägermeister. +
+Our team consists of two members *Lukas David* who is the team leader and *Alexander Horina* and it is called Jägermeister. +
 [%hardbreaks]
 We split our project in two main parts *organization* and *coding*. 
 Due to the small size of our team we decided that both team members are involved in every part of the project.
@@ -70,7 +71,7 @@ Because only two people work on this project we decided that we will not need so
 |Total
 | 
 | 
-|31h
+|*31h*
 
 |===
 
@@ -130,7 +131,7 @@ Because only two people work on this project we decided that we will not need so
 |Total
 | 
 | 
-|64h
+|*64h*
 
 
 
@@ -149,7 +150,7 @@ Because only two people work on this project we decided that we will not need so
 |64h
 
 |Total
-|95h
+|*95h*
 
 |===
 As mentioned before our project is divided in two main categories organization and coding and every task is in one of these two categories. Like we can see above the coding part has with 64 hours more than twice the size as the organization part which has only 31 hours.  
