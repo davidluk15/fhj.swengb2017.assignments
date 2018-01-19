@@ -2,27 +2,21 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="748.0" style="-fx-background-image: url('https://raw.githubusercontent.com/davidluk15/fhj.swengb2017.assignments/master/battleship/backgroundship.jpg');" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="748.0" style="-fx-background-image: url('https://raw.githubusercontent.com/davidluk15/fhj.swengb2017.assignments/master/battleship/credit_background.png');" stylesheets="@project.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.fhj.swengb.apps.battleship.jfx.Start">
    <children>
-      <Label layoutX="321.0" layoutY="102.0" text="BattleShipGame">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="333.0" layoutY="161.0" text="Designed by:" />
-      <Label layoutX="322.0" layoutY="270.0" text="Programmed by:" />
-      <Label layoutX="333.0" layoutY="182.0" text="Jägermeister" />
-      <Label layoutX="344.0" layoutY="299.0" text="Lukas David" />
-      <Label layoutX="326.0" layoutY="320.0" text="Alexander Horina" />
       <Label layoutX="277.0" text="CREDITS">
          <font>
             <Font size="52.0" />
          </font>
       </Label>
-      <Button layoutX="608.0" layoutY="482.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="126.0" text="Return" />
+      <Button fx:id="btReTurn" layoutX="608.0" layoutY="482.0" mnemonicParsing="false" onAction="#returnToMain" prefHeight="36.0" prefWidth="126.0" text="Return">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <TextArea editable="false" layoutX="328.0" layoutY="75.0" prefHeight="355.0" prefWidth="409.0" scrollLeft="1.0" text="BattleshipGame&#10;&#10;&#10;Designed by&#10;Jägermeister&#10;&#10;Programmed by&#10;Lukas David&#10;Alexander Horina&#10;&#10;Lorem ipsum&#10;Lorem ipsum&#10;Lorem ipsum&#10;Lorem ipsum&#10;Lorem ipsum&#10;Lorem ipsum" />
    </children>
 </AnchorPane>

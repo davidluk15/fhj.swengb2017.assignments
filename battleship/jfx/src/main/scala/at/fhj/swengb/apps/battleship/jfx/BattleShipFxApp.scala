@@ -32,7 +32,7 @@ object BattleShipFxApp {
   var splash: Scene = _
   var welcome: Scene = _
   var choosePlayer: Scene = _
-  var editGame: Scene = _
+  var edit: Scene = _
   var highscores: Scene = _
   var credits: Scene = _
   var game: Scene = _
@@ -46,7 +46,7 @@ object BattleShipFxApp {
 
   def loadNewGame: Scene = choosePlayer
 
-  def loadEditGame: Scene = editGame
+  def loadEdit: Scene = edit
 
   def loadHighscore: Scene = highscores
 
@@ -58,7 +58,7 @@ object BattleShipFxApp {
   def loadFxml(): Unit = {
     welcome = load("/at/fhj/swengb/apps/battleship/jfx/main.fxml")
     choosePlayer = load("/at/fhj/swengb/apps/battleship/jfx/choosePlayer.fxml")
-    editGame = load("/at/fhj/swengb/apps/battleship/jfx/edit.fxml")
+    edit = load("/at/fhj/swengb/apps/battleship/jfx/edit.fxml")
     highscores = load("/at/fhj/swengb/apps/battleship/jfx/highscores.fxml")
     credits = load("/at/fhj/swengb/apps/battleship/jfx/credits.fxml")
   }
@@ -83,22 +83,7 @@ object BattleShipFxApp {
     stage.show()
   }
 
-  /*class BattleShipFxApp extends Application {
 
-    val triedRoot = Try(FXMLLoader.load[Parent](getClass.getResource("/at/fhj/swengb/apps/battleship/jfx/battleshipfx.fxml")))
-
-    override def start(stage: Stage) = {
-      triedRoot match {
-        case Success(root) =>
-          stage.setScene(new Scene(root))
-          stage.setTitle("BattleshipGame by Jägermeister")
-          stage.getScene.getStylesheets.clear()
-          stage.show()
-        case Failure(e) => e.printStackTrace()
-      }
-    }
-
-  }*/
   class BattleShipFxApp extends Application {
 
 
@@ -116,29 +101,5 @@ object BattleShipFxApp {
 
   }
 
-  class BattleShipFxWelcome extends Initializable {
-
-    @FXML def newGame(): Unit = {
-      BattleShipFxApp.display(BattleShipFxApp.loadNewGame,BattleShipFxApp.loadMain)
-    }
-
-
-
-    @FXML def highscore(): Unit = {
-      BattleShipFxApp.display(BattleShipFxApp.loadHighscore,BattleShipFxApp.loadMain)
-    }
-
-    @FXML def credits(): Unit = {
-      BattleShipFxApp.display(BattleShipFxApp.loadCredits,BattleShipFxApp.loadMain)
-    }
-
-
-
-
-    override def initialize(location: URL, resources: ResourceBundle): Unit = {
-
-    }
-
-  }
 
 }
