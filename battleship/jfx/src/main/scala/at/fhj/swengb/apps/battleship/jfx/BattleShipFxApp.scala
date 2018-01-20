@@ -33,9 +33,11 @@ object BattleShipFxApp {
   var welcome: Scene = _
   var choosePlayer: Scene = _
   var edit: Scene = _
+  var editPlayerB: Scene = _
   var highscores: Scene = _
   var credits: Scene = _
   var game: Scene = _
+
   val css = "/at/fhj/swengb/apps/battleship/jfx/project.css"
 
   def loadMain: Stage = main
@@ -48,19 +50,23 @@ object BattleShipFxApp {
 
   def loadEdit: Scene = edit
 
+  def loadEditPlayerB: Scene = editPlayerB
+
   def loadHighscore: Scene = highscores
 
   def loadCredits: Scene = credits
 
-  def loadGame: Scene = game
+  def loadGameScreen: Scene = game
 
 
   def loadFxml(): Unit = {
     welcome = load("/at/fhj/swengb/apps/battleship/jfx/main.fxml")
     choosePlayer = load("/at/fhj/swengb/apps/battleship/jfx/choosePlayer.fxml")
     edit = load("/at/fhj/swengb/apps/battleship/jfx/edit.fxml")
+    editPlayerB = load("/at/fhj/swengb/apps/battleship/jfx/editPlayerB.fxml")
     highscores = load("/at/fhj/swengb/apps/battleship/jfx/highscores.fxml")
     credits = load("/at/fhj/swengb/apps/battleship/jfx/credits.fxml")
+    game = load("/at/fhj/swengb/apps/battleship/jfx/gameScreen.fxml")
   }
 
   private def load(file: String): Scene = {

@@ -26,4 +26,12 @@ class Edit {
     BattleShipFxApp.display(BattleShipFxApp.loadWelcome,BattleShipFxApp.loadMain)
   }
 
+  @FXML def loadGame(): Unit = {
+    BattleShipFxApp.display(BattleShipFxApp.loadGameScreen,BattleShipFxApp.loadMain)
+  }
+
+
+
+
+
 }

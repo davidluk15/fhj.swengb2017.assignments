@@ -5,7 +5,7 @@ import java.util.ResourceBundle
 import javafx.application.Application
 import javafx.fxml.{FXML, FXMLLoader, Initializable}
 import javafx.scene.{Parent, Scene}
-import javafx.scene.control.TextArea
+import javafx.scene.control.{TextArea, TextField}
 import javafx.scene.layout.GridPane
 import javafx.stage.Stage
 
@@ -23,8 +23,6 @@ class Start {
     BattleShipFxApp.display(BattleShipFxApp.loadNewGame,BattleShipFxApp.loadMain)
   }
 
-
-
   @FXML def highscore(): Unit = {
     BattleShipFxApp.display(BattleShipFxApp.loadHighscore,BattleShipFxApp.loadMain)
   }
@@ -41,6 +39,26 @@ class Start {
     BattleShipFxApp.display(BattleShipFxApp.loadEdit,BattleShipFxApp.loadMain)
   }
 
+  @FXML def loadEditPlayerB(): Unit = {
+    BattleShipFxApp.display(BattleShipFxApp.loadEditPlayerB,BattleShipFxApp.loadMain)
+  }
+
+  @FXML def loadGame(): Unit = {
+    BattleShipFxApp.display(BattleShipFxApp.loadGameScreen,BattleShipFxApp.loadMain)
+  }
 
 
+
+  /*
+
+    def playerNames(): Unit = {
+      val player1 = txtPlayer1.getText
+      val player2 = txtPlayer2.getText
+      //player1Name.setText(player1)
+      PlayerNameToSet.setText(player1)
+      println("Player1: " + player1 + "Player2: " + player2)
+
+    }
+
+  */
 }
