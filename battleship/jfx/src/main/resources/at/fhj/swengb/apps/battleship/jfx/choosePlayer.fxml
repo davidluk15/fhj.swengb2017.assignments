@@ -6,27 +6,29 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="748.0" style="-fx-background-image: url('https://raw.githubusercontent.com/davidluk15/fhj.swengb2017.assignments/master/battleship/backgroundship.jpg');" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.fhj.swengb.apps.battleship.jfx.Start">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="748.0" style="-fx-background-image: url('https://raw.githubusercontent.com/davidluk15/fhj.swengb2017.assignments/master/battleship/backgroundship.jpg');" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.fhj.swengb.apps.battleship.jfx.BattleShipFxChoosePlayer">
    <children>
-      <Label layoutX="143.0" layoutY="142.0" prefHeight="46.0" prefWidth="246.0" text="Player1 choose name:" textFill="#dcff3f">
+      <Label layoutX="143.0" layoutY="142.0" prefHeight="46.0" prefWidth="246.0" text="Player1 choose name:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
       <TextField fx:id="txtPlayer1" layoutX="389.0" layoutY="142.0" prefHeight="46.0" />
-      <Label layoutX="143.0" layoutY="211.0" prefHeight="46.0" prefWidth="246.0" text="Player2 choose name:" textFill="#dcff3f">
+      <Label layoutX="143.0" layoutY="211.0" prefHeight="46.0" prefWidth="246.0" text="Player2 choose name:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
       <TextField fx:id="txtPlayer2" layoutX="389.0" layoutY="211.0" prefHeight="46.0" />
-      <Button fx:id="btReturnMain" layoutX="457.0" layoutY="482.0" mnemonicParsing="false" onAction="#returnToMain" prefHeight="36.0" prefWidth="126.0" text="Return">
+      <Button fx:id="btReturnMain" layoutX="457.0" layoutY="482.0" mnemonicParsing="false" onAction="#backToMain" prefHeight="36.0" prefWidth="126.0" text="Return">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="btNextToEdit" layoutX="608.0" layoutY="482.0" mnemonicParsing="false" onAction="#nextToEdit" prefHeight="36.0" prefWidth="126.0" text="Next">
+      <Button fx:id="btNextToEdit" layoutX="608.0" layoutY="482.0" mnemonicParsing="false" onAction="#nextEditPlayerA" prefHeight="36.0" prefWidth="126.0" text="Next">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
+      <TextField fx:id="gameName" layoutX="281.0" layoutY="56.0" opacity="0.0" />
+      <TextField fx:id="gameTitle" alignment="CENTER" editable="false" layoutX="231.0" layoutY="28.0" prefHeight="56.0" prefWidth="288.0" />
    </children>
 </AnchorPane>

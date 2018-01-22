@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="748.0" style="-fx-background-image: url('https://raw.githubusercontent.com/davidluk15/fhj.swengb2017.assignments/master/battleship/backgroundship.jpg');" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.fhj.swengb.apps.battleship.jfx.Start">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="748.0" style="-fx-background-image: url('https://raw.githubusercontent.com/davidluk15/fhj.swengb2017.assignments/master/battleship/backgroundship.jpg');" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.fhj.swengb.apps.battleship.jfx.BattleShipFxHighscore">
    <children>
       <TextField alignment="CENTER" editable="false" layoutX="225.0" layoutY="26.0" text="Highscores">
          <font>
@@ -23,7 +23,7 @@
             <TableColumn prefWidth="120.0" text="Replay" />
         </columns>
       </TableView>
-      <Button layoutX="608.0" layoutY="482.0" mnemonicParsing="false" onAction="#returnToMain" prefHeight="36.0" prefWidth="126.0" text="Return">
+      <Button layoutX="608.0" layoutY="482.0" mnemonicParsing="false" onAction="#backToMain" prefHeight="36.0" prefWidth="126.0" text="Return">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

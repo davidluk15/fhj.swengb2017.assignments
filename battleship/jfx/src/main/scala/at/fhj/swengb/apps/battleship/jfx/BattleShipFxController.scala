@@ -1,4 +1,4 @@
-package at.fhj.swengb.apps.battleship.jfx
+/*package at.fhj.swengb.apps.battleship.jfx
 
 import java.net.URL
 import java.nio.file._
@@ -93,4 +93,4 @@ class BattleShipFxController extends Initializable {
     BattleShipGame(battleField, getCellWidth, getCellHeight, appendLog)
   }
 
-}
+}*/

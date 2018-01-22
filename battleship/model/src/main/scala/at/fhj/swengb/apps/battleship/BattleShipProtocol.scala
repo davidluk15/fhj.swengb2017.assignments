@@ -1,54 +1,87 @@
 package at.fhj.swengb.apps.battleship
 
-import java.{lang, util}
-
 import scala.collection.JavaConverters._
+import at.fhj.swengb.apps.battleship.BattleShipProtobuf.Game.Direction
 import at.fhj.swengb.apps.battleship.model._
 
 object BattleShipProtocol {
 
-  def convert(g : BattleShipGame) : BattleShipProtobuf.BattleShipGame = BattleShipProtobuf.BattleShipGame.newBuilder()
-    .setBattleField(BattleShipProtobuf.BattleField.newBuilder()
-      .setWidth(g.battleField.width)
-      .setHeight(g.battleField.height)
-      .setFleet(BattleShipProtobuf.Fleet.newBuilder().addAllVessel(g.battleField.fleet.vessels.map(convert).toIterable.asJava).build())
-      .build())
-    .addAllClickedCells(g.clickedCells.map(convert).toIterable.asJava)
-    .build()
+  // Convert to BattleShipProtobuf
 
-  def convert(g : BattleShipProtobuf.BattleShipGame) : BattleShipGame = {
-    val width = g.getBattleField.getWidth
-    val height = g.getBattleField.getHeight
-    val fleet = g.getBattleField.getFleet.getVesselList.asScala.map(convert).toSet
-    val battleField: BattleField = BattleField(width,height,Fleet(fleet))
-    val game = BattleShipGame(battleField, ((x:Int) => x.toDouble), ((x:Int) => x.toDouble),(x=>()))
-    g.getClickedCellsList.asScala.map(convert).foreach(game.hit)
-    game
+
+  def convert(g: GameInfo): BattleShipProtobuf.Game = {
+    BattleShipProtobuf.Game.newBuilder()
+      .setGameName(g.gameName)
+      .setPlayerA(g.player1)
+      .setPlayerB(g.player2).build()
   }
 
-  def convert(g: BattleShipProtobuf.Vessel) : Vessel = {
-    val name = g.getName
+
+  def convert(g: BattleShipGame): BattleShipProtobuf.Game.BattleShipGame = {
+    BattleShipProtobuf.Game.BattleShipGame.newBuilder()
+      .setBattlefield(convert(g.battleField))
+      .setCellWidth(g.battleField.width)
+      .setCellHeight(g.battleField.height)
+      .addAllCells(g.gameState.map(convert).asJava)
+      .setPlayer(g.player).build()
+
+  }
+
+  def convert(g: Vessel): BattleShipProtobuf.Game.Vessel = {
     val direction = {
-      g.getDirection match {
-        case "H" => Horizontal
-        case "V" => Vertical
+      g.direction match {
+        case Horizontal => Direction.Horizontal
+        case Vertical => Direction.Vertical
       }
     }
-    Vessel(NonEmptyString(name),convert(g.getStartPos),direction,g.getSize)
-  }
 
-  def convert(g: Vessel) : BattleShipProtobuf.Vessel = {
-    BattleShipProtobuf.Vessel.newBuilder()
+    BattleShipProtobuf.Game.Vessel.newBuilder()
       .setName(g.name.value)
       .setStartPos(convert(g.startPos))
-      .setSize(g.size)
-      .setDirection(g.direction match {
-        case Vertical => "V"
-        case Horizontal => "H"
-      })
-      .build()
+      .setDirection(direction)
+      .setSize(g.size).build()
   }
 
-  def convert(pos: BattlePos): BattleShipProtobuf.Pos = BattleShipProtobuf.Pos.newBuilder().setX(pos.x).setY(pos.y).build()
-  def convert(pos: BattleShipProtobuf.Pos) : BattlePos = BattlePos(pos.getX,pos.getY)
+  def convert(g: Fleet): BattleShipProtobuf.Game.Fleet = {
+    BattleShipProtobuf.Game.Fleet.newBuilder().addAllVessel(g.vessels.map(convert).asJava).build()
+  }
+
+  def convert(g: BattleField): BattleShipProtobuf.Game.BattleField = {
+    BattleShipProtobuf.Game.BattleField.newBuilder()
+      .setFleet(convert(g.fleet))
+      .setWith(g.width)
+      .setHeight(g.height).build()
+  }
+
+  def convert(g: BattlePos): BattleShipProtobuf.Game.BattlePos = BattleShipProtobuf.Game.BattlePos.newBuilder().setX(g.x).setY(g.y).build()
+
+  def convert(g: BattleShipProtobuf.Game) : GameInfo = GameInfo(g.getPlayerA, g.getPlayerB, g.getGameName)
+
+  def convert(g: BattleShipProtobuf.Game.Vessel): Vessel = {
+    val direction = {
+      g.getDirection match {
+        case Direction.Horizontal => Horizontal
+        case Direction.Vertical => Vertical
+      }
+    }
+    Vessel(NonEmptyString(g.getName), BattlePos(g.getStartPos.getX, g.getStartPos.getY), direction, g.getSize)
+
+  }
+
+  def convert(g: BattleShipProtobuf.Game.Fleet): Fleet = {
+    val vessels: Set[Vessel] = g.getVesselList.asScala.map(x => convert(x)).toSet
+    Fleet(vessels)
+  }
+
+  def convert(g: BattleShipProtobuf.Game.BattleField) : BattleField = BattleField(g.getWith, g.getHeight, convert(g.getFleet))
+
+  def convert(g: BattleShipProtobuf.Game.BattleShipGame): BattleShipGame = {
+
+    val battleship = BattleShipGame(convert(g.getBattlefield), x => x.toDouble, x => x.toDouble, x => (), g.getPlayer)
+    g.getCellsList.asScala.map(x => convert(x)).foreach(battleship.clickedCells)
+    battleship
+  }
+
+  def convert(g: BattleShipProtobuf.Game.BattlePos): BattlePos = BattlePos(g.getX, g.getY)
 }
+

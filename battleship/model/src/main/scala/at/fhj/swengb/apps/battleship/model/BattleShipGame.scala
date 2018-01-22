@@ -1,14 +1,14 @@
 package at.fhj.swengb.apps.battleship.model
 
-
 /**
   * Contains all information about a battleship game.
   */
 case class BattleShipGame(battleField: BattleField,
                           getCellWidth: Int => Double,
                           getCellHeight: Int => Double,
-                          log: String => Unit){
-
+                          log: String => Unit,
+                          player: String
+                         ) {
 
   /**
     * remembers which vessel was hit at which position
@@ -17,8 +17,7 @@ case class BattleShipGame(battleField: BattleField,
     **/
   var hits: Map[Vessel, Set[BattlePos]] = Map()
 
-
-  var clickedCells : List[BattlePos] = List()
+  var gameState: List[BattlePos] = List()
 
   /**
     * contains all vessels which are destroyed
@@ -37,21 +36,20 @@ case class BattleShipGame(battleField: BattleField,
       log,
       battleField.fleet.findByPos(pos),
       updateGameState,
-      hit)
-  }
-
-  def hit(pos:BattlePos):Unit = {
-    if(!clickedCells.contains(pos))
-      clickedCells = clickedCells :+ pos
-  }
-
-  def refresh(x:Int) : Unit = {
-    clickedCells.take(x).foreach((pos) => {
-      cells(pos.x*battleField.width + pos.y).getOnMouseClicked().handle(null)
-    })
+      clickedCells)
   }
 
   def getCells(): Seq[BattleFxCell] = cells
+
+  def update(cell:Int) : Unit = {
+    gameState.take(cell).foreach((pos) => {
+      cells(pos.x*battleField.width + pos.y).getOnMouseClicked().handle(null)
+    })
+  }
+  def clickedCells(pos: BattlePos): Unit = {
+    if(!gameState.contains(pos))
+      gameState = gameState :+ pos
+  }
 
 
   def updateGameState(vessel: Vessel, pos: BattlePos): Unit = {
