@@ -17,15 +17,8 @@ import scala.util.Random
 class BattleShipFxChoosePlayer extends Initializable {
 
 
-  val list1: List[String] = List("Fight", "War", "Assault","Bloodshed","Encounter","Skirmish","Battle")
-  val list2: List[String] = List("of", "at", "in")
-  val list3: List[String] = List("Graz", "Venice", "Azeroth","Normandy")
 
-  /*var playerOne: String=_
-  var playerTwo: String=_
-  var gameName: String = _*/
-  var game: GameInfo = _
-  private var filename: String = _
+
 
   @FXML private var gameTitle: TextField = _
   @FXML private var txtPlayer1: TextField = _
@@ -41,11 +34,11 @@ class BattleShipFxChoosePlayer extends Initializable {
     BattleShipFxApp.display(BattleShipFxApp.loadEditPlayerB,BattleShipFxApp.loadMain)
   }
 
-  override def initialize(url: URL, rb: ResourceBundle): Unit = initGame
-
-  private def initGame(): Unit = {
-    getRandomGameName()
+  override def initialize(url: URL, rb: ResourceBundle): Unit = {
+    gameTitle.setText(BattleShipFxApp.getRandomGameName())
   }
+
+
 
 
 
@@ -53,47 +46,11 @@ class BattleShipFxChoosePlayer extends Initializable {
     BattleShipFxApp.display(BattleShipFxApp.loadMainMenu,BattleShipFxApp.loadMain)
   }
 
- /*def getPlayerOne(name: String) = {
-    if (name != "") {
-      playerOne = name
-    } else {
-      playerOne = "Player 1"
-    }
-  }*/
-
- /* def getPlayerTwo(name: String) = {
-    if (name != "") {
-      playerTwo = name
-    } else {
-      playerTwo = "Player 2"
-    }
-
-  }
-
-  def getFinalBattleName(name: String) = {
-      gameName = getRandomGameName()
-  }
-*/
-  def getRandomGameName(): String = {
-    var name = ""
-    name = list1(Random.nextInt(list1.size)) + " " + list2(Random.nextInt(list2.size)) + " " + list3(Random.nextInt(list3.size))
-    gameTitle.setText(name)
-    return name
-  }
-
-
   @FXML def nextEditPlayerA(): Unit = {
-    BattleShipFxApp.display(BattleShipFxApp.load("/at/fhj/swengb/apps/battleship/jfx/editPlayerA.fxml"),BattleShipFxApp.main)
-    val player1 =txtPlayer1.getText()
-    val player2 =txtPlayer2.getText()
-    val battleName =gameTitle.getText()
-    System.out.println(player1)
-    System.out.println(player2)
-    System.out.println(battleName)
-    game = GameInfo(player1,player2,battleName)
-    BattleShipFxApp.setGameInfo(game)
-    BattleShipFxApp.saveGameState("battleship/" + filename)
-
+    BattleShipFxApp.getPlayerOne(txtPlayer1.getText())
+    BattleShipFxApp.getPlayerTwo(txtPlayer2.getText())
+    BattleShipFxApp.getFinalBattleName(gameTitle.getText())
+    BattleShipFxApp.display(BattleShipFxApp.load("/at/fhj/swengb/apps/battleship/jfx/editPlayerA.fxml"), BattleShipFxApp.main)
 
   }
 

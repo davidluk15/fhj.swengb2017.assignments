@@ -25,15 +25,14 @@ class BattleShipFxEditPlayerA extends Initializable{
   @FXML private var posX: TextField = _
   @FXML private var posY: TextField = _
 
-   var game: GameInfo = _
-  System.out.println(txtPlayer1)
+
 
   @FXML def backToMain(): Unit = {
     BattleShipFxApp.display(BattleShipFxApp.loadMainMenu,BattleShipFxApp.loadMain)
   }
 
   @FXML def toEditPlayerB(): Unit = {
-    BattleShipFxApp.display(BattleShipFxApp.loadEditPlayerB,BattleShipFxApp.loadMain)
+    BattleShipFxApp.display(BattleShipFxApp.load("/at/fhj/swengb/apps/battleship/jfx/editPlayerB"), BattleShipFxApp.main)
   }
 
   @FXML private var battleGroundGridPane: GridPane = _
@@ -41,10 +40,9 @@ class BattleShipFxEditPlayerA extends Initializable{
 
 
   override def initialize(url: URL, rb: ResourceBundle): Unit = {
-    System.out.println(txtPlayer1)
-    game = BattleShipFxApp.getGameInfo()
 
-    txtPlayer1.setText(game.player1)
+    txtPlayer1.setText(BattleShipFxApp.playerOne )
+    gameTitle.setText(BattleShipFxApp.battleName )
   }
 
 

@@ -16,44 +16,30 @@ import scala.util.Random
 class BattleShipFxEditPlayerB extends Initializable{
 
 
-
-
-
-
-  @FXML private var txtPlayer1: TextField = _
+  @FXML private var txtPlayer2: TextField = _
   @FXML private var gameTitle: TextField = _
   @FXML private var posX: TextField = _
   @FXML private var posY: TextField = _
 
-  var game: GameInfo = _
-  System.out.println(txtPlayer1)
+
 
   @FXML def backToMain(): Unit = {
     BattleShipFxApp.display(BattleShipFxApp.loadMainMenu,BattleShipFxApp.loadMain)
   }
 
-  @FXML def toEditPlayerB(): Unit = {
-    BattleShipFxApp.display(BattleShipFxApp.loadEditPlayerB,BattleShipFxApp.loadMain)
-  }
+
 
   @FXML private var battleGroundGridPane: GridPane = _
 
 
 
   override def initialize(url: URL, rb: ResourceBundle): Unit = {
-    System.out.println(txtPlayer1)
-    game = BattleShipFxApp.getGameInfo()
 
-    txtPlayer1.setText(game.player1)
+    txtPlayer2.setText(BattleShipFxApp.playerTwo )
+    gameTitle.setText(BattleShipFxApp.battleName )
   }
 
-  //def initGame(): Unit = {
-  //game = BattleShipFxApp.getGameInfo()
-  //System.out.println(game.player1)
-  //txtPlayer1.setText(game.player1)
 
-
-  //}
 
 
 }
