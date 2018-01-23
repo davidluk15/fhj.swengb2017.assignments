@@ -73,7 +73,6 @@ object BattleShipFxApp {
   val list3: List[String] = List("Graz", "Venice", "Azeroth","Normandy")
 
   var filename: String = _
-  var gameInfo: GameInfo = _
 
   var playerOne: String = _
   var playerTwo: String = _
@@ -105,7 +104,6 @@ object BattleShipFxApp {
 
 
   def loadFxml(): Unit = {
-    //splash = load("/at/fhj/swengb/apps/battleship/jfx/splash.fxml")
     mainMenu = load("/at/fhj/swengb/apps/battleship/jfx/mainMenu.fxml")
     choosePlayer = load("/at/fhj/swengb/apps/battleship/jfx/choosePlayer.fxml")
     highscore = load("/at/fhj/swengb/apps/battleship/jfx/highscores.fxml")
