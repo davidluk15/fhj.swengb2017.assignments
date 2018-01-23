@@ -90,7 +90,7 @@
       </Label>
       <TextField fx:id="posX" layoutX="126.0" layoutY="358.0" prefHeight="26.0" prefWidth="54.0" />
       <TextField fx:id="posY" layoutX="126.0" layoutY="395.0" prefHeight="26.0" prefWidth="54.0" />
-      <TextField fx:id="gameTitle" layoutX="285.0" layoutY="1.0">
+      <TextField fx:id="gameTitle" editable="false" layoutX="285.0" layoutY="1.0">
          <font>
             <Font size="20.0" />
          </font>

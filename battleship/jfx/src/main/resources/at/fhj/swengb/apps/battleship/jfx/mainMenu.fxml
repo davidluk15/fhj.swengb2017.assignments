@@ -37,9 +37,9 @@
             </Button>
          </children>
       </VBox>
-      <Label layoutX="271.0" layoutY="14.0" text="MAIN MENU" textFill="#31c70a">
+      <Label layoutX="271.0" layoutY="14.0" text="MAIN MENU" textFill="WHITE">
          <font>
-            <Font name="Yu Gothic UI Semilight" size="51.0" />
+            <Font name="Algerian" size="51.0" />
          </font>
       </Label>
    </children>
