@@ -9,12 +9,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="748.0" style="-fx-background-image: url('https://raw.githubusercontent.com/davidluk15/fhj.swengb2017.assignments/master/battleship/backgroundship.jpg');" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.fhj.swengb.apps.battleship.jfx.BattleShipFxHighscore">
    <children>
-      <TextField alignment="CENTER" editable="false" layoutX="225.0" layoutY="26.0" text="Highscores">
+      <TextField alignment="CENTER" editable="false" layoutX="181.0" layoutY="22.0" style="-fx-background-color: transparent; -fx-text-fill: White;" text="Highscores">
          <font>
-            <Font size="24.0" />
+            <Font size="31.0" />
          </font>
       </TextField>
-      <TableView layoutX="83.0" layoutY="103.0" prefHeight="334.0" prefWidth="602.0" style="-fx-border-style: solid;">
+      <TableView layoutX="73.0" layoutY="103.0" prefHeight="334.0" prefWidth="602.0" style="-fx-border-style: solid;">
         <columns>
           <TableColumn prefWidth="120.0" text="Date" />
           <TableColumn prefWidth="120.0" text="Player" />
