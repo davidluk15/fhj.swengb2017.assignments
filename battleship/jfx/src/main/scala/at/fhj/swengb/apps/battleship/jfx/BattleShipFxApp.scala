@@ -73,6 +73,7 @@ object BattleShipFxApp {
   val list3: List[String] = List("Graz", "Venice", "Azeroth","Normandy")
 
   var filename: String = _
+  var gameInfo: GameInfo = _
 
   var playerOne: String = _
   var playerTwo: String = _
