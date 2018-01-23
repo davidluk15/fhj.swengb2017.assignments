@@ -23,42 +23,6 @@ import at.fhj.swengb.apps.battleship.BattleShipProtocol._
 
 
 
-
-/**object BattleShipFxApp {
-  def main(args: Array[String]): Unit = {
-
-    Application.launch(classOf[BattleShipFxApp], args: _*)
-  }
-}
-
-
-class BattleShipFxApp extends Application {
-
-  //val triedRoot = Try(FXMLLoader.load[Parent](getClass.getResource("/at/fhj/swengb/apps/battleship/jfx/battleshipfx.fxml")))
- // val welcomeScreen = Try(FXMLLoader.load[Parent](getClass.getResource("/at/fhj/swengb/apps/battleship/jfx/welcome_screen.fxml")))
-
-  //val css = "/at/fhj/swengb/apps/battleship/jfx/battleship.css"
-
-  override def start(stage: Stage): Unit = {
-  * welcomeScreen match {
-  * case Success(root) =>
-  *stage.setScene(new Scene(root))
-  *stage.show()
-  *stage.getScene.getStylesheets.clear()
-  *stage.getScene.getStylesheets.add(css)
-  *stage.setTitle("BattleShip")
-  * case Failure(e) => e.printStackTrace()
-  * }
-  * }
-  * */
-
-
-
-
-
-
-
-
 object BattleShipFxApp {
 
   def main(args: Array[String]): Unit = {
@@ -70,7 +34,7 @@ object BattleShipFxApp {
 
   val list1: List[String] = List("Fight", "War", "Assault","Bloodshed","Encounter","Skirmish","Battle")
   val list2: List[String] = List("of", "at", "in")
-  val list3: List[String] = List("Graz", "Venice", "Azeroth","Normandy")
+  val list3: List[String] = List("Graz", "Venice", "Azeroth","Normandy","Bretagne")
 
   var filename: String = _
   var gameInfo: GameInfo = _
@@ -113,17 +77,6 @@ object BattleShipFxApp {
 
   }
 
-  def loadFxmlEditPlayerA(): Unit = {
-    editPlayerA = load("/at/fhj/swengb/apps/battleship/jfx/editPlayerA.fxml")
-  }
-
-  def loadFxmlEditPlayerB(): Unit = {
-    editPlayerB = load("/at/fhj/swengb/apps/battleship/jfx/editPlayerB.fxml")
-  }
-
-  def loadFxmlGame(): Unit = {
-    gameScreen = load("/at/fhj/swengb/apps/battleship/jfx/gameScreen.fxml")
-  }
 
 
 
@@ -145,7 +98,6 @@ object BattleShipFxApp {
 
   def display(scene: Scene, stage: Stage): Unit = {
     stage.setScene(scene)
-
     stage.show()
   }
 
@@ -166,27 +118,15 @@ object BattleShipFxApp {
     return name
   }
   def getPlayerOne(name: String) = {
-    if(name != "") {
       playerOne = name
-    } else {
-      playerOne = "Player 1"
-    }
   }
 
   def getPlayerTwo(name: String) = {
-    if(name != "") {
       playerTwo = name
-    } else {
-      playerTwo = "Player 2"
-    }
   }
 
   def getGameTitle(name: String) = {
-    if(name != "") {
       battleName = name
-    } else {
-      battleName = getRandomGameName()
-    }
   }
 
 

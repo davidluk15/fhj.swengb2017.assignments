@@ -23,6 +23,7 @@ import at.fhj.swengb.apps.battleship.jfx.BattleShipFxApp.display
 class BattleShipFxMainMenu extends Initializable {
 
   @FXML def newGame(): Unit = {
+    (BattleShipFxApp.getRandomGameName())
     BattleShipFxApp.display(BattleShipFxApp.loadChoosePlayer,BattleShipFxApp.loadMain)
   }
 
