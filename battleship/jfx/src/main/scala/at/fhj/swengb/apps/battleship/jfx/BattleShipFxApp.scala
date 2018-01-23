@@ -110,7 +110,7 @@ object BattleShipFxApp {
     choosePlayer = load("/at/fhj/swengb/apps/battleship/jfx/choosePlayer.fxml")
     highscore = load("/at/fhj/swengb/apps/battleship/jfx/highscores.fxml")
     credits = load("/at/fhj/swengb/apps/battleship/jfx/credits.fxml")
-    editPlayerB = load("/at/fhj/swengb/apps/battleship/jfx/editPlayerB.fxml")
+
 
   }
 
@@ -118,9 +118,9 @@ object BattleShipFxApp {
     editPlayerA = load("/at/fhj/swengb/apps/battleship/jfx/editPlayerA.fxml")
   }
 
-  /*def loadFxmlEditPlayerB(): Unit = {
+  def loadFxmlEditPlayerB(): Unit = {
     editPlayerB = load("/at/fhj/swengb/apps/battleship/jfx/editPlayerB.fxml")
-  }*/
+  }
 
   def loadFxmlGame(): Unit = {
     gameScreen = load("/at/fhj/swengb/apps/battleship/jfx/gameScreen.fxml")
@@ -159,7 +159,7 @@ object BattleShipFxApp {
     * @return
     */
 
- 
+
 
   def getRandomGameName(): String = {
     var name = ""
@@ -182,7 +182,7 @@ object BattleShipFxApp {
     }
   }
 
-  def getFinalBattleName(name: String) = {
+  def getGameTitle(name: String) = {
     if(name != "") {
       battleName = name
     } else {
@@ -190,10 +190,7 @@ object BattleShipFxApp {
     }
   }
 
-  //def saveGameState(fname: String): Unit = {
-    //filename = fname
-    //convert(gameRound).writeTo(Files.newOutputStream(Paths.get(filename)))
-  //}
+
     def saveGameState(fname: String): Unit = {
       filename = fname
       convert(gameInfo).writeTo(Files.newOutputStream(Paths.get(filename)))
@@ -212,10 +209,6 @@ object BattleShipFxApp {
 
 
     override def start(stage: Stage): Unit = {
-      /*
-      stage.setResizable(false)
-
-      BattleShipFxApp.display(BattleShipFxApp.loadWelcome,stage)*/
       BattleShipFxApp.main = stage
       stage.setTitle("BattleshipGame by Jägermeister")
       BattleShipFxApp.display(BattleShipFxApp.load("/at/fhj/swengb/apps/battleship/jfx/splashscreen.fxml"),stage)

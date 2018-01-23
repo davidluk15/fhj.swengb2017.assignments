@@ -49,7 +49,7 @@ class BattleShipFxChoosePlayer extends Initializable {
   @FXML def nextEditPlayerA(): Unit = {
     BattleShipFxApp.getPlayerOne(txtPlayer1.getText())
     BattleShipFxApp.getPlayerTwo(txtPlayer2.getText())
-    BattleShipFxApp.getFinalBattleName(gameTitle.getText())
+    BattleShipFxApp.getGameTitle(gameTitle.getText())
     BattleShipFxApp.display(BattleShipFxApp.load("/at/fhj/swengb/apps/battleship/jfx/editPlayerA.fxml"), BattleShipFxApp.main)
 
   }

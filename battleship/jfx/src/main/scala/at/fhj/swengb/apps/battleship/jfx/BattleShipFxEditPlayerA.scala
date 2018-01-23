@@ -31,18 +31,16 @@ class BattleShipFxEditPlayerA extends Initializable{
     BattleShipFxApp.display(BattleShipFxApp.loadMainMenu,BattleShipFxApp.loadMain)
   }
 
-  @FXML def toEditPlayerB(): Unit = {
-    BattleShipFxApp.display(BattleShipFxApp.load("/at/fhj/swengb/apps/battleship/jfx/editPlayerB"), BattleShipFxApp.main)
-  }
+  @FXML def toEditPlayerB(): Unit = BattleShipFxApp.display(BattleShipFxApp.load("/at/fhj/swengb/apps/battleship/jfx/editPlayerB.fxml"),BattleShipFxApp.main)
+
 
   @FXML private var battleGroundGridPane: GridPane = _
 
 
 
   override def initialize(url: URL, rb: ResourceBundle): Unit = {
-
-    txtPlayer1.setText(BattleShipFxApp.playerOne )
-    gameTitle.setText(BattleShipFxApp.battleName )
+    txtPlayer1.setText(BattleShipFxApp.playerOne)
+    gameTitle.setText(BattleShipFxApp.battleName)
   }
 
 
