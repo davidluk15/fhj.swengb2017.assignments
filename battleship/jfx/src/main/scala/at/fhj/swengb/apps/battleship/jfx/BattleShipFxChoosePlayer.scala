@@ -9,36 +9,33 @@ import javafx.scene.Scene
 import javafx.scene.control.{Label, TextField}
 
 import at.fhj.swengb.apps.battleship.BattleShipProtocol.convert
-//import at.fhj.swengb.apps.battleship.jfx.BattleShipFxApp.battleName
-import at.fhj.swengb.apps.battleship.model._
 
 import scala.util.Random
 
 class BattleShipFxChoosePlayer extends Initializable {
 
-
-
-
-
   @FXML private var gameTitle: TextField = _
   @FXML private var txtPlayer1: TextField = _
   @FXML private var txtPlayer2: TextField = _
+
+  
+  override def initialize(url: URL, rb: ResourceBundle): Unit = init
+
+  private def init(): Unit = {
+    gameTitle.setText(BattleShipFxApp.getRandomGameName())
+  }
+
 
 
 
   @FXML def backToMain(): Unit = {
     BattleShipFxApp.display(BattleShipFxApp.loadMainMenu,BattleShipFxApp.loadMain)
+    gameTitle.setText(BattleShipFxApp.getRandomGameName())
   }
 
   @FXML def toEditPlayerB(): Unit = {
     BattleShipFxApp.display(BattleShipFxApp.loadEditPlayerB,BattleShipFxApp.loadMain)
   }
-
-  override def initialize(url: URL, rb: ResourceBundle): Unit = {
-    gameTitle.setText(BattleShipFxApp.getRandomGameName())
-  }
-
-
 
 
 
@@ -53,7 +50,5 @@ class BattleShipFxChoosePlayer extends Initializable {
     BattleShipFxApp.display(BattleShipFxApp.load("/at/fhj/swengb/apps/battleship/jfx/editPlayerA.fxml"), BattleShipFxApp.main)
 
   }
-
-
 
 }

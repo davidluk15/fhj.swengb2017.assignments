@@ -15,9 +15,9 @@ import javafx.scene.layout.{BorderPane, Pane}
 
 import at.fhj.swengb.apps.battleship.BattleShipProtobuf
 import at.fhj.swengb.apps.battleship.BattleShipProtocol.convert
-
 import com.sun.javafx.application.LauncherImpl
 import at.fhj.swengb.apps.battleship.BattleShipProtocol._
+
 
 
 
@@ -126,8 +126,10 @@ object BattleShipFxApp {
   }
 
   def getGameTitle(name: String) = {
-      battleName = name
-  }
+
+      battleName = getRandomGameName()
+    }
+
 
 
 

@@ -22,6 +22,7 @@ class BattleShipFxEditPlayerB extends Initializable{
 
   @FXML def backToMain(): Unit = {
     BattleShipFxApp.display(BattleShipFxApp.loadMainMenu,BattleShipFxApp.loadMain)
+    gameTitle.setText(BattleShipFxApp.getRandomGameName())
   }
 
 

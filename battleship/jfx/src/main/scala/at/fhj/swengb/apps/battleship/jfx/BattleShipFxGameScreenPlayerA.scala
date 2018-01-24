@@ -20,6 +20,7 @@ class BattleShipFxGameScreenPlayerA extends Initializable{
 
   @FXML def backToMain(): Unit = {
     BattleShipFxApp.display(BattleShipFxApp.loadMainMenu,BattleShipFxApp.loadMain)
+    gameTitle.setText(BattleShipFxApp.getRandomGameName())
   }
 
   @FXML def playerB(): Unit = BattleShipFxApp.display(BattleShipFxApp.load("/at/fhj/swengb/apps/battleship/jfx/gameScreenPlayerB.fxml"),BattleShipFxApp.main)
