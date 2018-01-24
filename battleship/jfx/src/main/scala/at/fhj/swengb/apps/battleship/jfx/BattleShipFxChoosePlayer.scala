@@ -25,21 +25,12 @@ class BattleShipFxChoosePlayer extends Initializable {
     gameTitle.setText(BattleShipFxApp.getRandomGameName())
   }
 
-
-
-
   @FXML def backToMain(): Unit = {
     BattleShipFxApp.display(BattleShipFxApp.loadMainMenu,BattleShipFxApp.loadMain)
   }
 
   @FXML def toEditPlayerB(): Unit = {
     BattleShipFxApp.display(BattleShipFxApp.loadEditPlayerB,BattleShipFxApp.loadMain)
-  }
-
-
-
-  def backToHome(): Unit = {
-    BattleShipFxApp.display(BattleShipFxApp.loadMainMenu,BattleShipFxApp.loadMain)
   }
 
   @FXML def nextEditPlayerA(): Unit = {

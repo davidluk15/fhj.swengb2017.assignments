@@ -23,10 +23,9 @@ import at.fhj.swengb.apps.battleship.jfx.BattleShipFxApp.display
 class BattleShipFxMainMenu extends Initializable {
 
   @FXML def newGame(): Unit = {
-    (BattleShipFxApp.getRandomGameName())
+    BattleShipFxApp.loadChoosePlayerFxml()
     BattleShipFxApp.display(BattleShipFxApp.loadChoosePlayer,BattleShipFxApp.loadMain)
   }
-
 
   @FXML def highscore(): Unit = {
     BattleShipFxApp.display(BattleShipFxApp.loadHighscore,BattleShipFxApp.loadMain)
@@ -35,7 +34,6 @@ class BattleShipFxMainMenu extends Initializable {
   @FXML def credits(): Unit = {
     BattleShipFxApp.display(BattleShipFxApp.loadCredits,BattleShipFxApp.loadMain)
   }
-
 
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
 

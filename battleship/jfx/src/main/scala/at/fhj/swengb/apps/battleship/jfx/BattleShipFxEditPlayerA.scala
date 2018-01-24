@@ -38,9 +38,6 @@ class BattleShipFxEditPlayerA extends Initializable{
 
   @FXML def toEditPlayerB(): Unit = BattleShipFxApp.display(BattleShipFxApp.load("/at/fhj/swengb/apps/battleship/jfx/editPlayerB.fxml"),BattleShipFxApp.main)
 
-  
-
-
 
   override def initialize(url: URL, rb: ResourceBundle): Unit = {
     txtPlayer1.setText("Playername: " ++ BattleShipFxApp.playerOne)

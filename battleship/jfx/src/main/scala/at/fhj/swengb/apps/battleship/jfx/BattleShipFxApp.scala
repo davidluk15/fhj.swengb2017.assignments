@@ -75,6 +75,10 @@ object BattleShipFxApp {
 
   }
 
+  def loadChoosePlayerFxml(): Unit = {
+    choosePlayer = load("/at/fhj/swengb/apps/battleship/jfx/choosePlayer.fxml")
+  }
+
 
 
 
