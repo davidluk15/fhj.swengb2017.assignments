@@ -25,6 +25,11 @@ class BattleShipFxEditPlayerA extends Initializable{
   @FXML private var posX: TextField = _
   @FXML private var posY: TextField = _
 
+  @FXML private var grid: GridPane = _
+
+  private def getCellHeight(y: Int): Double = grid.getRowConstraints.get(y).getPrefHeight
+
+  private def getCellWidth(x: Int): Double = grid.getColumnConstraints.get(x).getPrefWidth
 
 
   @FXML def backToMain(): Unit = {

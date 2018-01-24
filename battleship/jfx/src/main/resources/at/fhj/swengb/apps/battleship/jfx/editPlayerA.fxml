@@ -16,7 +16,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <GridPane gridLinesVisible="true" layoutX="385.0" layoutY="162.0" prefHeight="280.0" prefWidth="349.0" style="-fx-background-color: blue;">
+      <GridPane fx:id="grid" gridLinesVisible="true" layoutX="385.0" layoutY="162.0" prefHeight="280.0" prefWidth="349.0" style="-fx-background-color: blue;">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
