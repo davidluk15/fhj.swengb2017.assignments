@@ -38,8 +38,7 @@ class BattleShipFxEditPlayerA extends Initializable{
 
   @FXML def toEditPlayerB(): Unit = BattleShipFxApp.display(BattleShipFxApp.load("/at/fhj/swengb/apps/battleship/jfx/editPlayerB.fxml"),BattleShipFxApp.main)
 
-
-  @FXML private var battleGroundGridPane: GridPane = _
+  
 
 
 
