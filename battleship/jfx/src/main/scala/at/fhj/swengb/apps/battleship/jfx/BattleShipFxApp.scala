@@ -36,12 +36,10 @@ object BattleShipFxApp {
   val list2: List[String] = List("of", "at", "in")
   val list3: List[String] = List("Graz", "Venice", "Azeroth","Normandy","Bretagne")
 
-  var filename: String = _
-
 
   var playerOne: String = _
   var playerTwo: String = _
-  var battleName: String = _
+  var gameName: String = _
 
   var main: Stage = _
   var splashScreen: Scene = _
@@ -126,8 +124,7 @@ object BattleShipFxApp {
   }
 
   def getGameTitle(name: String) = {
-
-      battleName = getRandomGameName()
+      gameName = name
     }
 
 

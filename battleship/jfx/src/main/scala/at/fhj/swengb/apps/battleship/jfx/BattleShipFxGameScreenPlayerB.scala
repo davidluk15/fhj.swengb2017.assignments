@@ -20,7 +20,6 @@ class BattleShipFxGameScreenPlayerB extends Initializable{
 
   @FXML def backToMain(): Unit = {
     BattleShipFxApp.display(BattleShipFxApp.loadMainMenu,BattleShipFxApp.loadMain)
-    gameTitle.setText(BattleShipFxApp.getRandomGameName())
   }
 
   @FXML def playerA(): Unit = BattleShipFxApp.display(BattleShipFxApp.load("/at/fhj/swengb/apps/battleship/jfx/gameScreenPlayerA.fxml"),BattleShipFxApp.main)
@@ -32,7 +31,7 @@ class BattleShipFxGameScreenPlayerB extends Initializable{
 
   override def initialize(url: URL, rb: ResourceBundle): Unit = {
     player2txt.setText("Playername: " ++ BattleShipFxApp.playerTwo)
-    gameTitle.setText(BattleShipFxApp.battleName)
+    gameTitle.setText(BattleShipFxApp.gameName)
   }
 
 

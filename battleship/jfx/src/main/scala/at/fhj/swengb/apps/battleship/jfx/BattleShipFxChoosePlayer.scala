@@ -18,7 +18,7 @@ class BattleShipFxChoosePlayer extends Initializable {
   @FXML private var txtPlayer1: TextField = _
   @FXML private var txtPlayer2: TextField = _
 
-  
+
   override def initialize(url: URL, rb: ResourceBundle): Unit = init
 
   private def init(): Unit = {
@@ -30,7 +30,6 @@ class BattleShipFxChoosePlayer extends Initializable {
 
   @FXML def backToMain(): Unit = {
     BattleShipFxApp.display(BattleShipFxApp.loadMainMenu,BattleShipFxApp.loadMain)
-    gameTitle.setText(BattleShipFxApp.getRandomGameName())
   }
 
   @FXML def toEditPlayerB(): Unit = {

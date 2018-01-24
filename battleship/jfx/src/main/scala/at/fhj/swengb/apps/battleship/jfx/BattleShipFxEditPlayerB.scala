@@ -22,7 +22,6 @@ class BattleShipFxEditPlayerB extends Initializable{
 
   @FXML def backToMain(): Unit = {
     BattleShipFxApp.display(BattleShipFxApp.loadMainMenu,BattleShipFxApp.loadMain)
-    gameTitle.setText(BattleShipFxApp.getRandomGameName())
   }
 
 
@@ -33,7 +32,7 @@ class BattleShipFxEditPlayerB extends Initializable{
 
   override def initialize(url: URL, rb: ResourceBundle): Unit = {
     txtPlayer2.setText("Playername: " ++ BattleShipFxApp.playerTwo)
-    gameTitle.setText(BattleShipFxApp.battleName)
+    gameTitle.setText(BattleShipFxApp.gameName)
   }
 
 
