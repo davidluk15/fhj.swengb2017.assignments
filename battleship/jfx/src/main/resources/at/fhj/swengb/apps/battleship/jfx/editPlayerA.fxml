@@ -11,12 +11,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="748.0" style="-fx-background-image: url('https://raw.githubusercontent.com/davidluk15/fhj.swengb2017.assignments/master/battleship/backgroundship.jpg');" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.fhj.swengb.apps.battleship.jfx.BattleShipFxEditPlayerA">
    <children>
-      <Label alignment="CENTER" layoutX="377.0" layoutY="45.0" opacity="0.96" prefHeight="58.0" prefWidth="297.0" text="Place your ships!">
+      <Label alignment="CENTER" layoutX="411.0" layoutY="88.0" opacity="0.96" prefHeight="58.0" prefWidth="297.0" text="Place your ships!">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <GridPane gridLinesVisible="true" layoutX="344.0" layoutY="131.0" prefHeight="280.0" prefWidth="349.0" style="-fx-background-color: blue;">
+      <GridPane gridLinesVisible="true" layoutX="385.0" layoutY="162.0" prefHeight="280.0" prefWidth="349.0" style="-fx-background-color: blue;">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -42,25 +42,10 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
       </GridPane>
-      <Label alignment="CENTER" layoutX="23.0" layoutY="56.0" prefHeight="36.0" prefWidth="126.0" text="Playername:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtPlayer1" editable="false" layoutX="150.0" layoutY="62.0" />
+      <TextField fx:id="txtPlayer1" editable="false" layoutX="8.0" layoutY="72.0" style="-fx-background-color: transparent; -fx-font-size: 14;" />
       <AnchorPane layoutY="119.0" prefHeight="150.0" prefWidth="222.0" style="-fx-border-style: solid;">
          <children>
             <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="36.0" prefWidth="126.0" text="Ships remaining:">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="14.0" layoutY="50.0" prefHeight="36.0" prefWidth="126.0" text="Label">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="14.0" layoutY="86.0" prefHeight="36.0" prefWidth="126.0" text="Label">
                <font>
                   <Font size="14.0" />
                </font>
@@ -69,7 +54,10 @@
       </AnchorPane>
       <Button layoutX="14.0" layoutY="302.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="87.0" text="Vertical" />
       <Button layoutX="125.0" layoutY="302.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="87.0" text="Horizontal" />
-      <Button layoutX="14.0" layoutY="478.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="87.0" text="Place" />
+      <Button layoutX="21.0" layoutY="482.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" text="Place">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
       <Button layoutX="451.0" layoutY="482.0" mnemonicParsing="false" onAction="#backToMain" prefHeight="36.0" prefWidth="132.0" text="Return">
          <font>
             <Font name="System Bold" size="15.0" />
@@ -90,7 +78,7 @@
       </Label>
       <TextField fx:id="posX" layoutX="126.0" layoutY="358.0" prefHeight="26.0" prefWidth="54.0" />
       <TextField fx:id="posY" layoutX="126.0" layoutY="395.0" prefHeight="26.0" prefWidth="54.0" />
-      <TextField fx:id="gameTitle" editable="false" layoutX="285.0" layoutY="1.0">
+      <TextField fx:id="gameTitle" alignment="CENTER" editable="false" layoutX="137.0" layoutY="24.0" prefHeight="64.0" prefWidth="486.0" style="-fx-background-color: transparent; -fx-font-family: ALgerian; -fx-font-size: 36; -fx-text-fill: White;">
          <font>
             <Font size="20.0" />
          </font>

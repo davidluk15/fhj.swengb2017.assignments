@@ -5,9 +5,7 @@ package at.fhj.swengb.apps.battleship;
 option java_package         = "at.fhj.swengb.apps.battleship";
 option java_outer_classname = "BattleShipProtobuf";
 
-// We created a message for every object in the game which has to be saved
 
-// We used an enum for Direction because we didn't really find an alternative for a trait
 message Game {
 
     enum Direction {

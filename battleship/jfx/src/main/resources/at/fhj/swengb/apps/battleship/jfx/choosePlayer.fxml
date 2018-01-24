@@ -29,6 +29,6 @@
             <Font name="System Bold" size="15.0" />
          </font></Button>
       <TextField fx:id="gameName" layoutX="281.0" layoutY="56.0" opacity="0.0" />
-      <TextField fx:id="gameTitle" alignment="CENTER" editable="false" layoutX="231.0" layoutY="28.0" prefHeight="56.0" prefWidth="288.0" />
+      <TextField fx:id="gameTitle" alignment="CENTER" editable="false" layoutX="137.0" layoutY="24.0" prefHeight="64.0" prefWidth="490.0" style="-fx-background-color: transparent; -fx-font-family: Algerian; -fx-text-fill: White; -fx-font-size: 36;" />
    </children>
 </AnchorPane>

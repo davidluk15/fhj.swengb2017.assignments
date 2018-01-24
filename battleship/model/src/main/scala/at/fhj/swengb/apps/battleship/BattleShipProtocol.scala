@@ -84,4 +84,3 @@ object BattleShipProtocol {
 
   def convert(g: BattleShipProtobuf.Game.BattlePos): BattlePos = BattlePos(g.getX, g.getY)
 }
-

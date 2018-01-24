@@ -39,7 +39,7 @@ class BattleShipFxEditPlayerA extends Initializable{
 
 
   override def initialize(url: URL, rb: ResourceBundle): Unit = {
-    txtPlayer1.setText(BattleShipFxApp.playerOne)
+    txtPlayer1.setText("Playername: " ++ BattleShipFxApp.playerOne)
     gameTitle.setText(BattleShipFxApp.battleName)
   }
 

@@ -15,7 +15,7 @@ import javafx.scene.layout.{BorderPane, Pane}
 
 import at.fhj.swengb.apps.battleship.BattleShipProtobuf
 import at.fhj.swengb.apps.battleship.BattleShipProtocol.convert
-import at.fhj.swengb.apps.battleship.model.GameInfo
+
 import com.sun.javafx.application.LauncherImpl
 import at.fhj.swengb.apps.battleship.BattleShipProtocol._
 
@@ -37,7 +37,7 @@ object BattleShipFxApp {
   val list3: List[String] = List("Graz", "Venice", "Azeroth","Normandy","Bretagne")
 
   var filename: String = _
-  var gameInfo: GameInfo = _
+
 
   var playerOne: String = _
   var playerTwo: String = _
@@ -130,10 +130,6 @@ object BattleShipFxApp {
   }
 
 
-    def saveGameState(fname: String): Unit = {
-      filename = fname
-      convert(gameInfo).writeTo(Files.newOutputStream(Paths.get(filename)))
-    }
 
 
 
