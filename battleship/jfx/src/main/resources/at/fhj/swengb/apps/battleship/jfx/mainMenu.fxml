@@ -37,7 +37,7 @@
             </Button>
          </children>
       </VBox>
-      <Label layoutX="266.0" layoutY="41.0" text="MAIN MENU" textFill="WHITE">
+      <Label layoutX="266.0" layoutY="61.0" text="MAIN MENU" textFill="WHITE">
          <font>
             <Font name="Algerian" size="51.0" />
          </font>

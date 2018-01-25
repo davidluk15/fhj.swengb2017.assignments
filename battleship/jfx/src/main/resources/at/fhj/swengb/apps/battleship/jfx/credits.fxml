@@ -12,8 +12,8 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <TextArea editable="false" layoutX="78.0" layoutY="157.0" prefHeight="270.0" prefWidth="654.0" scrollLeft="1.0" text="BattleshipGame&#10;&#10;&#10;Designed by&#10;Jägermeister&#10;&#10;Programmed by&#10;Lukas David&#10;Alexander Horina&#10;&#10;Lorem ipsum&#10;Lorem ipsum&#10;Lorem ipsum&#10;Lorem ipsum&#10;Lorem ipsum&#10;Lorem ipsum" />
-      <Label layoutX="286.0" layoutY="61.0" text="CREDITS" textFill="WHITE">
+      <TextArea editable="false" layoutX="78.0" layoutY="157.0" prefHeight="270.0" prefWidth="654.0" scrollLeft="1.0" text="BattleshipGame&#10;&#10;&#10;Designed by&#10;Jägermeister&#10;&#10;Programmed by&#10;Lukas David&#10;Alexander Horina&#10;&#10;The game was developed by student from FH JOANNEUM &#10;as part of their bachelor degree program.&#10;&#10;All images taken from https://www.flickr.com.&#10;&#10;" />
+      <Label layoutX="266.0" layoutY="61.0" text="CREDITS" textFill="WHITE">
          <font>
             <Font name="Algerian" size="51.0" />
          </font>
