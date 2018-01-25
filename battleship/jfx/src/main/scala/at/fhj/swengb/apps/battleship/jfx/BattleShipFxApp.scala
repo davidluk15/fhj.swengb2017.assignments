@@ -150,7 +150,7 @@ object BattleShipFxApp {
     override def start(stage: Stage): Unit = {
       BattleShipFxApp.main = stage
       main.setResizable(false)
-      main.sizeToScene
+      main.sizeToScenesgs
       stage.setTitle("BattleshipGame by Jägermeister")
       BattleShipFxApp.display(BattleShipFxApp.load("/at/fhj/swengb/apps/battleship/jfx/splashscreen.fxml"),stage)
 
