@@ -36,8 +36,6 @@ class BattleShipFxEditPlayerA extends Initializable {
   @FXML def select(): Unit = {
     if (fleetList.getSelectionModel.getSelectedItem != null) {
 
-      val ship: Vessel = fleetList.getSelectionModel.getSelectedItem.getVessel
-      val direction: Direction = directionBX.getSelectionModel.getSelectedItem
       }
     }
 
