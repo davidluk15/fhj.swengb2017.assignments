@@ -15,7 +15,7 @@ case class Edit(pos: BattlePos,
 
   def init(clickedPos: Seq[BattlePos]): Unit = {
 
-    //When given list contains position of cell assume that cell was already clicked
+
     if (clickedPos.contains(pos)) {
       colorizeAfterClick()
     } else {

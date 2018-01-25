@@ -119,9 +119,8 @@ class BattleShipFxEditPlayerA extends Initializable {
     val alreadySetShips: Set[NonEmptyString] = alreadySet.map(e => e.name)
     standardFleet = standardFleet.filter(e => !alreadySetShips.contains(e.name))
 
-
     val listData: ObservableList[shipsListEntry] = FXCollections.observableArrayList()
-    standardFleet.toList.foreach(e => listData.add(VesselListViewEntry(e)))
+    standardFleet.toList.foreach(e => listData.add(shipsListEntry(e)))
     fleetList.setItems(listData)
   }
 
@@ -141,7 +140,7 @@ class BattleShipFxEditPlayerA extends Initializable {
     override def toString: String = name.get
   }
 
-  private object VesselListViewEntry {
+  private object shipsListEntry {
     def apply(vessel: Vessel): shipsListEntry = {
       val entry = new shipsListEntry
       entry.setName(vessel.name.value)
