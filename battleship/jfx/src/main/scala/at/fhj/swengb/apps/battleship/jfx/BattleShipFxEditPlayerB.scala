@@ -14,8 +14,7 @@ import at.fhj.swengb.apps.battleship.model.{BattleShip, _}
 class BattleShipFxEditPlayerB extends Initializable {
 
   private var fleetConf: FleetConfig = FleetConfig.playerA
-  var initPlayerNr: Int = 1
-  var closedRegularly: Boolean = false
+
   @FXML private var fleetList: ListView[VesselListViewEntry] = _
   @FXML private var directionBX: ComboBox[Direction] = _
   @FXML private var grid: GridPane = _
