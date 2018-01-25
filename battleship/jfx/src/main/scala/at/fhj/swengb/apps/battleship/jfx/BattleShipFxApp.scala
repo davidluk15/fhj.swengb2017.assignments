@@ -17,6 +17,7 @@ import at.fhj.swengb.apps.battleship.BattleShipProtobuf
 import at.fhj.swengb.apps.battleship.BattleShipProtocol.convert
 import com.sun.javafx.application.LauncherImpl
 import at.fhj.swengb.apps.battleship.BattleShipProtocol._
+import at.fhj.swengb.apps.battleship.model.FleetConfig
 
 
 

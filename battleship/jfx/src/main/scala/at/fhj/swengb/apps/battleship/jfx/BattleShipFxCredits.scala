@@ -20,6 +20,4 @@ class BattleShipFxCredits extends Initializable {
 
 
 
-
-
 }

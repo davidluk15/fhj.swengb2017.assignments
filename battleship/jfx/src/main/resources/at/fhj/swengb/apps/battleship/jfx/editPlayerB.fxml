@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -10,78 +12,54 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="748.0" style="-fx-background-image: url('https://raw.githubusercontent.com/davidluk15/fhj.swengb2017.assignments/master/battleship/backgroundship.jpg');" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.fhj.swengb.apps.battleship.jfx.BattleShipFxEditPlayerB">
-   <children>
-      <Label alignment="CENTER" layoutX="411.0" layoutY="88.0" opacity="0.96" prefHeight="58.0" prefWidth="297.0" text="Place your ships!">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <GridPane fx:id="battleGroundGridPane" gridLinesVisible="true" layoutX="385.0" layoutY="162.0" prefHeight="280.0" prefWidth="349.0" style="-fx-background-color: blue;">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-      </GridPane>
-      <TextField fx:id="txtPlayer2" editable="false" layoutX="8.0" layoutY="72.0" style="-fx-background-color: transparent; -fx-font: 14; -fx-font-family: Arial;" />
-      <AnchorPane layoutY="119.0" prefHeight="150.0" prefWidth="222.0" style="-fx-border-style: solid;">
-         <children>
-            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="36.0" prefWidth="126.0" text="Ships remaining:">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <Button layoutX="14.0" layoutY="302.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="87.0" text="Vertical" />
-      <Button layoutX="125.0" layoutY="302.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="87.0" text="Horizontal" />
-      <Button layoutX="21.0" layoutY="482.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" text="Place">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font></Button>
-      <Button layoutX="451.0" layoutY="482.0" mnemonicParsing="false" onAction="#backToMain" prefHeight="36.0" prefWidth="132.0" text="Return">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font></Button>
-      <Button layoutX="608.0" layoutY="482.0" mnemonicParsing="false" onAction="#playerA" prefHeight="36.0" prefWidth="126.0" text="Next">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font></Button>
-      <Label alignment="CENTER" layoutY="353.0" prefHeight="36.0" prefWidth="126.0" text="Position X:">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutY="391.0" prefHeight="36.0" prefWidth="126.0" text="Position Y:">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="posX" layoutX="126.0" layoutY="358.0" prefHeight="26.0" prefWidth="54.0" />
-      <TextField fx:id="posY" layoutX="126.0" layoutY="395.0" prefHeight="26.0" prefWidth="54.0" />
-      <TextField fx:id="gameTitle" alignment="CENTER" editable="false" layoutX="137.0" layoutY="24.0" prefHeight="64.0" prefWidth="486.0" style="-fx-background-color: transparent; -fx-font-family: ALgerian; -fx-font-size: 36; -fx-text-fill: White;">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </TextField>
-   </children>
+    <children>
+        <TextField fx:id="gameTitle" alignment="CENTER" editable="false" layoutX="142.0" layoutY="18.0" prefHeight="64.0" prefWidth="508.0" style="-fx-background-color: transparent; -fx-font-family: Algerian; -fx-font-size: 36; -fx-text-fill: White;" />
+        <TextField fx:id="txtPlayer2" editable="false" layoutX="18.0" layoutY="82.0" style="-fx-background-color: transparent; -fx-font: 14; -fx-font-family: Arial;" />
+        <ListView fx:id="fleetList" layoutX="14.0" layoutY="132.0" onMouseClicked="#onShipSelected" prefHeight="320.0" prefWidth="224.0" />
+        <ComboBox fx:id="directionBX" layoutX="14.0" layoutY="480.0" prefHeight="36.0" prefWidth="224.0" visibleRowCount="2" />
+        <GridPane fx:id="grid" alignment="CENTER" hgap="2.0" layoutX="330.0" layoutY="132.0" prefHeight="301.0" prefWidth="283.0" vgap="2.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="35.0" minHeight="30.0" prefHeight="35.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="35.0" minHeight="30.0" prefHeight="35.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="35.0" minHeight="30.0" prefHeight="35.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="35.0" minHeight="30.0" prefHeight="35.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="35.0" minHeight="30.0" prefHeight="35.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="35.0" minHeight="30.0" prefHeight="35.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="35.0" minHeight="30.0" prefHeight="35.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="35.0" minHeight="30.0" prefHeight="35.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="35.0" minHeight="30.0" prefHeight="35.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="35.0" minHeight="30.0" prefHeight="35.0" vgrow="NEVER" />
+            </rowConstraints>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </GridPane>
+        <Button fx:id="toMain" layoutX="457.0" layoutY="482.0" mnemonicParsing="false" onAction="#backToMain" prefHeight="36.0" prefWidth="126.0" text="Return">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+        <Button fx:id="next" layoutX="608.0" layoutY="482.0" mnemonicParsing="false" onAction="#toGame" prefHeight="36.0" prefWidth="126.0" text="Next">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+        <TextField fx:id="player" alignment="CENTER" editable="false" layoutX="316.0" layoutY="79.0" prefHeight="54.0" prefWidth="402.0" style="-fx-background-color: transparent;">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </TextField>
+    </children>
 </AnchorPane>
