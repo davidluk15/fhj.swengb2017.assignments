@@ -39,8 +39,6 @@ class BattleShipFxEditPlayerB extends Initializable {
 
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
 
-
-
     refreshGameField(gameField)
     refreshFleetList(gameField.fleet.vessels)
     dirComb()
@@ -59,11 +57,10 @@ class BattleShipFxEditPlayerB extends Initializable {
     Direction.add(Vertical)
 
     directionBX.setItems(Direction)
-    directionBX.getSelectionModel.selectFirst()
   }
 
 
-  private def updateEditorAfterClick(pos: BattlePos): Unit = {
+  private def updateAfterClick(pos: BattlePos): Unit = {
 
     var setVessel: Vessel = fleetList.getSelectionModel.getSelectedItem.getVessel
     val setDirection: Direction = directionBX.getSelectionModel.getSelectedItem
@@ -104,26 +101,24 @@ class BattleShipFxEditPlayerB extends Initializable {
         getCellWidth(x),
         getCellHeight(y),
         field.fleet.findByPos(pos),
-        updateEditorAfterClick)
+        updateAfterClick)
     }
     for (c <- cells) {
       grid.add(c, c.pos.x, c.pos.y)
       c.init()
     }
 
-
   }
 
 
   private def refreshFleetList(alreadySet: Set[Vessel]): Unit = {
-    var aFullStandardFleet: Set[Vessel] = Fleet(fleetConf).vessels
+    var standardFleet: Set[Vessel] = Fleet(fleetConf).vessels
 
     val alreadySetShips: Set[NonEmptyString] = alreadySet.map(e => e.name)
-    aFullStandardFleet = aFullStandardFleet.filter(e => !alreadySetShips.contains(e.name))
-
+    standardFleet = standardFleet.filter(e => !alreadySetShips.contains(e.name))
 
     val listData: ObservableList[shipsListEntry] = FXCollections.observableArrayList()
-    aFullStandardFleet.toList.foreach(e => listData.add(shipsListEntry(e)))
+    standardFleet.toList.foreach(e => listData.add(shipsListEntry(e)))
     fleetList.setItems(listData)
   }
 
