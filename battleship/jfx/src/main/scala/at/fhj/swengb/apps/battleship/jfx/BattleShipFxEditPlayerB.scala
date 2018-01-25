@@ -32,28 +32,18 @@ class BattleShipFxEditPlayerB extends Initializable {
     BattleShipFxApp.display(BattleShipFxApp.loadMainMenu,BattleShipFxApp.loadMain)
   }
 
-  @FXML def onShipSelected(): Unit = {
+  @FXML def select(): Unit = {
     if (fleetList.getSelectionModel.getSelectedItem != null) {
 
       val ship: Vessel = fleetList.getSelectionModel.getSelectedItem.getVessel
       val direction: Direction = directionBX.getSelectionModel.getSelectedItem
-      if (ship != null && direction != null) {
-        disableAllButons(false)
+
+
       }
     }
-  }
 
-  private def disableAllButons(disable: Boolean): Unit = {
 
-    grid.getChildren.forEach(e => {
-      val cell: Edit = e.asInstanceOf[Edit]
-      cell.someVessel match {
-        case Some(v) =>
-          cell.setDisable(true)
-        case None => cell.setDisable(disable)
-      }
-    })
-  }
+
 
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
 
@@ -61,7 +51,7 @@ class BattleShipFxEditPlayerB extends Initializable {
     fleetList.getSelectionModel.setSelectionMode(SelectionMode.SINGLE)
     refreshGameField(gameField)
     refreshFleetList(gameField.fleet.vessels)
-    initDirectionComboBox()
+    dirComb()
     gameTitle.setText(BattleShipFxApp.gameName)
     player.setText(BattleShipFxApp.playerTwo ++ " place your ships!")
 
@@ -71,7 +61,7 @@ class BattleShipFxEditPlayerB extends Initializable {
 
   private def getCellWidth(x: Int): Double = grid.getColumnConstraints.get(x).getPrefWidth
 
-  private def initDirectionComboBox(): Unit = {
+  private def dirComb(): Unit = {
     val Direction: ObservableList[Direction] = FXCollections.observableArrayList()
     Direction.add(Horizontal)
     Direction.add(Vertical)
@@ -106,7 +96,7 @@ class BattleShipFxEditPlayerB extends Initializable {
 
     refreshGameField(gameField)
     refreshFleetList(gameField.fleet.vessels)
-    disableAllButons(true)
+
   }
 
 
@@ -129,7 +119,7 @@ class BattleShipFxEditPlayerB extends Initializable {
       c.init()
     }
 
-    disableAllButons(true)
+
   }
 
 
