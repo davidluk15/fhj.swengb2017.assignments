@@ -15,7 +15,7 @@ class BattleShipFxEditPlayerB extends Initializable {
 
   private var fleetConf: FleetConfig = FleetConfig.playerA
 
-  @FXML private var fleetList: ListView[VesselListViewEntry] = _
+  @FXML private var fleetList: ListView[shipsListEntry] = _
   @FXML private var directionBX: ComboBox[Direction] = _
   @FXML private var grid: GridPane = _
   @FXML private var gameTitle:TextField =_
@@ -40,9 +40,6 @@ class BattleShipFxEditPlayerB extends Initializable {
 
       }
     }
-
-
-
 
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
 
@@ -129,13 +126,13 @@ class BattleShipFxEditPlayerB extends Initializable {
     aFullStandardFleet = aFullStandardFleet.filter(e => !alreadySetShips.contains(e.name))
 
 
-    val listData: ObservableList[VesselListViewEntry] = FXCollections.observableArrayList()
-    aFullStandardFleet.toList.foreach(e => listData.add(VesselListViewEntry(e)))
+    val listData: ObservableList[shipsListEntry] = FXCollections.observableArrayList()
+    aFullStandardFleet.toList.foreach(e => listData.add(shipsListEntry(e)))
     fleetList.setItems(listData)
   }
 
 
-  private class VesselListViewEntry {
+  private class shipsListEntry {
     val name: SimpleStringProperty = new SimpleStringProperty()
     private var ship: Vessel = _
 
@@ -150,9 +147,9 @@ class BattleShipFxEditPlayerB extends Initializable {
     override def toString: String = name.get
   }
 
-  private object VesselListViewEntry {
-    def apply(vessel: Vessel): VesselListViewEntry = {
-      val entry = new VesselListViewEntry
+  private object shipsListEntry {
+    def apply(vessel: Vessel): shipsListEntry = {
+      val entry = new shipsListEntry
       entry.setName(vessel.name.value)
       entry.setVessel(vessel)
 
