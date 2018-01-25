@@ -16,6 +16,7 @@
             <TableColumn prefWidth="120.0" text="Game Name" />
             <TableColumn prefWidth="120.0" text="Moves" />
             <TableColumn prefWidth="120.0" text="Replay" />
+            <TableColumn prefWidth="75.0" text="Column X" />
         </columns>
       </TableView>
       <Button layoutX="608.0" layoutY="482.0" mnemonicParsing="false" onAction="#backToMain" prefHeight="36.0" prefWidth="126.0" text="Return">
